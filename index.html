@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MORgain — The Breed That Chooses You</title>
+<meta name="description" content="America's first breed. A feisty, versatile spirit. Discover the Morgan Horse and the community bringing new people into the herd.">
+<link id="faviconLink" rel="icon" href="assets/morgain-favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,900&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+
+:root{
+  --void:    #0b0313;
+  --deep:    #1c0736;
+  --purple:  #4b1690;
+  --violet:  #7c2ee0;
+  --gold:    #f6c445;
+  --gold-hi: #ffe08a;
+  --gold-dim:#8a6a1f;
+  --white:   #fbf3ff;
+  --dim:     #c6b6de;
+
+  --display: "Fraunces", "Times New Roman", serif;
+  --body:    "Space Grotesk", "Segoe UI", sans-serif;
+  --mono:    "JetBrains Mono", ui-monospace, monospace;
+
+  --container: 1180px;
+}
+
+*{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{
+  margin:0;
+  background: var(--void);
+  color: var(--white);
+  font-family: var(--body);
+  font-size:17px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+@media (prefers-reduced-motion: reduce){
+  *{ animation-duration:0.001ms !important; transition-duration:0.001ms !important; }
+}
+img{ max-width:100%; display:block; }
+a{ color:inherit; }
+.wrap{ max-width:var(--container); margin:0 auto; padding:0 32px; position:relative; }
+
+h1,h2,h3{ font-family:var(--display); color:var(--white); margin:0; font-weight:700; }
+h1{ font-size:clamp(46px,9vw,108px); line-height:0.98; font-weight:900; letter-spacing:-0.01em; }
+h2{ font-size:clamp(32px,5vw,58px); line-height:1.04; font-weight:700; }
+p{ margin:0 0 1em; }
+.lede{ font-size:clamp(18px,2vw,22px); color:var(--dim); max-width:52ch; }
+
+.eyebrow{
+  font-family:var(--mono); font-size:12px; letter-spacing:.28em; text-transform:uppercase;
+  color:var(--gold); display:flex; align-items:center; gap:12px; margin-bottom:20px;
+}
+.eyebrow::before{ content:""; width:30px; height:2px; background:var(--gold); }
+
+/* background texture */
+body{
+  background-image:
+    radial-gradient(ellipse 1000px 600px at 15% 0%, rgba(124,46,224,0.35), transparent 60%),
+    radial-gradient(ellipse 800px 500px at 100% 20%, rgba(246,196,69,0.10), transparent 55%),
+    radial-gradient(ellipse 900px 700px at 0% 100%, rgba(75,22,144,0.35), transparent 60%);
+  background-repeat:no-repeat;
+}
+
+/* ============ nav ============ */
+header.site{
+  position:sticky; top:0; z-index:60;
+  background:rgba(11,3,19,0.82);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(246,196,69,0.18);
+}
+.nav{ display:flex; align-items:center; justify-content:space-between; padding:16px 32px; max-width:var(--container); margin:0 auto; }
+.brand{ display:flex; align-items:center; gap:12px; text-decoration:none; }
+.brand img{ height:38px; width:auto; border-radius:50%; }
+.brand .brand-title{ font-family:var(--display); font-weight:900; font-size:19px; letter-spacing:.06em; color:var(--gold); }
+.brand .brand-tag { font-family:var(--mono); font-size:11px; color:var(--dim); margin-left:4px; }
+
+nav.links{ display:flex; gap:30px; align-items:center; }
+nav.links a{
+  text-decoration:none; font-family:var(--mono); font-size:12px; letter-spacing:.12em; text-transform:uppercase;
+  color:var(--dim); border-bottom:1px solid transparent; padding-bottom:4px; transition:color .2s, border-color .2s;
+}
+nav.links a:hover{ color:var(--gold-hi); border-color:var(--gold); }
+.nav-cta{
+  font-family:var(--mono) !important; background:var(--gold); color:var(--void) !important;
+  padding:9px 20px !important; border-radius:100px; border:none !important; font-weight:700;
+}
+.nav-cta:hover{ background:var(--gold-hi); }
+.nav-toggle{ display:none; }
+@media (max-width:820px){
+  nav.links{
+    position:fixed; inset:64px 0 0 0; background:var(--void); flex-direction:column; padding:36px;
+    gap:24px; transform:translateX(100%); transition:transform .3s ease; align-items:flex-start;
+  }
+  nav.links.open{ transform:translateX(0); }
+  .nav-toggle{ display:block; background:none; border:1px solid rgba(246,196,69,0.4); color:var(--gold-hi);
+    font-size:20px; padding:8px 12px; border-radius:8px; }
+}
+
+/* thread */
+.thread-rail{
+  position:absolute; left:calc(50% - 1px); top:0; bottom:0; width:2px;
+  background:repeating-linear-gradient(to bottom, var(--gold) 0 6px, transparent 6px 14px);
+  opacity:.35; pointer-events:none;
+}
+.node{
+  width:14px; height:14px; border-radius:50%; background:var(--gold);
+  box-shadow:0 0 0 6px rgba(246,196,69,0.15);
+  margin:0 auto 26px;
+}
+
+/* hero */
+.hero{
+  min-height:92vh; display:flex; align-items:center; position:relative;
+  padding:150px 0 100px; overflow:hidden;
+}
+.hero::after{
+  content:""; position:absolute; inset:0;
+  background:url('assets/banner-wide.jpg') center 30%/cover no-repeat;
+  opacity:.22; mix-blend-mode:luminosity;
+  mask-image:linear-gradient(to bottom, transparent, black 30%, black 70%, transparent);
+}
+.hero .wrap{ text-align:center; display:flex; flex-direction:column; align-items:center; }
+.hero img.crest{ width:120px; margin-bottom:34px; filter:drop-shadow(0 10px 40px rgba(246,196,69,0.35)); }
+.hero h1{ margin-bottom:26px; }
+.hero h1 .gold{ color:var(--gold); }
+.hero .lede{ margin:0 auto 44px; }
+.btn-row{ display:flex; gap:18px; justify-content:center; flex-wrap:wrap; }
+.btn{
+  font-family:var(--mono); font-size:13px; letter-spacing:.14em; text-transform:uppercase;
+  text-decoration:none; padding:17px 30px; border-radius:100px; display:inline-block;
+  border:2px solid var(--gold); transition:all .2s ease; font-weight:700;
+}
+.btn-solid{ background:var(--gold); color:var(--void); }
+.btn-solid:hover{ background:var(--gold-hi); border-color:var(--gold-hi); transform:translateY(-2px); }
+.btn-line{ background:transparent; color:var(--gold-hi); }
+.btn-line:hover{ background:rgba(246,196,69,0.1); transform:translateY(-2px); }
+.scroll-cue{
+  margin-top:70px; font-family:var(--mono); font-size:11px; letter-spacing:.2em; text-transform:uppercase;
+  color:var(--dim); display:flex; flex-direction:column; align-items:center; gap:10px;
+}
+.scroll-cue svg{ animation:bob 1.8s ease-in-out infinite; }
+@keyframes bob{ 0%,100%{ transform:translateY(0);} 50%{ transform:translateY(8px);} }
+
+/* rest of page styles (kept as previously) */
+.statement{ padding:120px 0; text-align:center; position:relative; }
+.statement .wrap{ max-width:920px; }
+.statement h2{ font-style:italic; font-weight:600; }
+.statement h2 .gold{ color:var(--gold); font-style:normal; font-weight:900; }
+
+.section{ padding:110px 0; position:relative; }
+.section-head{ text-align:center; max-width:700px; margin:0 auto 64px; }
+.section-head .lede{ margin:0 auto; }
+
+.trait-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:2px; background:rgba(246,196,69,0.18); border:1px solid rgba(246,196,69,0.18); }
+.trait-card{ background:var(--deep); padding:40px 32px; min-height:210px; display:flex; flex-direction:column; gap:16px; transition:background .25s ease; }
+.trait-card:hover{ background:#25094a; }
+.trait-num{ font-family:var(--mono); color:var(--gold-dim); font-size:13px; letter-spacing:.1em; }
+.trait-card h3{ font-size:23px; color:var(--gold-hi); }
+.trait-card p{ color:var(--dim); font-size:15px; margin:0; }
+@media (max-width:900px){ .trait-grid{ grid-template-columns:1fr 1fr; } }
+@media (max-width:600px){ .trait-grid{ grid-template-columns:1fr; } }
+
+.community{ background:linear-gradient(180deg, var(--deep), var(--void)); border-top:1px solid rgba(246,196,69,0.14); border-bottom:1px solid rgba(246,196,69,0.14); }
+.community-grid{ display:grid; grid-template-columns:1fr 1fr; gap:70px; align-items:center; }
+.community-copy p{ color:var(--dim); }
+.tag-row{ display:flex; flex-wrap:wrap; gap:10px; margin-top:28px; }
+.tag-pill{
+  font-family:var(--mono); font-size:12px; color:var(--gold-hi); border:1px solid rgba(246,196,69,0.4);
+  padding:8px 16px; border-radius:100px; letter-spacing:.03em;
+}
+
+.feed{ display:flex; flex-direction:column; gap:16px; }
+.post{
+  background:var(--void); border:1px solid rgba(246,196,69,0.18); border-radius:16px; padding:22px;
+  position:relative;
+}
+.post::before{
+  content:""; position:absolute; left:-27px; top:50%; width:26px; height:2px;
+  background:repeating-linear-gradient(to right, var(--gold) 0 5px, transparent 5px 10px);
+  opacity:.5;
+}
+.post-head{ display:flex; align-items:center; gap:12px; margin-bottom:14px; }
+.avatar{ width:38px; height:38px; border-radius:50%; background:var(--purple); border:1px solid var(--gold); display:flex; align-items:center; justify-content:center; font-family:var(--mono); font-size:12px; color:var(--gold-hi); font-weight:700; flex-shrink:0; }
+.post-head .who{ font-family:var(--body); font-weight:700; font-size:14.5px; color:var(--white); }
+.post-head .where{ font-family:var(--mono); font-size:11px; color:var(--dim); }
+.post p{ margin:0 0 12px; color:var(--dim); font-size:14.5px; }
+.post-stats{ display:flex; gap:18px; font-family:var(--mono); font-size:12px; color:var(--gold); }
+@media (max-width:900px){ .community-grid{ grid-template-columns:1fr; gap:40px; } .post::before{ display:none; } }
+
+.quotes{ padding:120px 0; }
+.quote-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:36px; }
+.quote-card{ border-top:2px solid var(--gold); padding-top:26px; }
+.quote-card p{ font-family:var(--display); font-style:italic; font-size:20px; color:var(--white); line-height:1.4; }
+.quote-card .who{ font-family:var(--mono); font-size:12px; letter-spacing:.08em; color:var(--gold); text-transform:uppercase; }
+@media (max-width:860px){ .quote-grid{ grid-template-columns:1fr; } }
+
+.join{ padding:130px 0; text-align:center; position:relative; }
+.join::before{
+  content:""; position:absolute; inset:0;
+  background:radial-gradient(ellipse 900px 400px at 50% 20%, rgba(246,196,69,0.16), transparent 70%);
+}
+.join .wrap{ position:relative; max-width:700px; }
+.join h2{ margin-bottom:22px; }
+.join .lede{ margin:0 auto 40px; }
+.signup{ display:flex; gap:12px; max-width:460px; margin:0 auto 26px; flex-wrap:wrap; justify-content:center; }
+.signup input{
+  flex:1; min-width:220px; background:var(--deep); border:1px solid rgba(246,196,69,0.35); color:var(--white);
+  font-family:var(--body); font-size:15px; padding:15px 18px; border-radius:100px;
+}
+.signup input:focus{ outline:none; border-color:var(--gold); }
+.signup button{
+  font-family:var(--mono); font-size:13px; letter-spacing:.1em; text-transform:uppercase; font-weight:700;
+  background:var(--gold); color:var(--void); border:none; padding:15px 28px; border-radius:100px; cursor:pointer;
+}
+.signup button:hover{ background:var(--gold-hi); }
+.fine{ font-family:var(--mono); font-size:11.5px; color:var(--dim); }
+.socials{ display:flex; gap:16px; justify-content:center; margin-top:34px; }
+.socials a{ width:42px; height:42px; border:1px solid rgba(246,196,69,0.35); border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--gold-hi); transition:border-color .2s, color .2s; }
+.socials a:hover{ border-color:var(--gold); color:var(--gold); }
+
+footer.site{ border-top:1px solid rgba(246,196,69,0.16); padding:48px 0 30px; }
+.foot-row{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; }
+.foot-row .brand .brand-title{ font-size:16px; }
+footer .fine{ text-align:right; }
+@media (max-width:600px){ .foot-row{ flex-direction:column; text-align:center; } footer .fine{ text-align:center; } }
+
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="nav">
+    <a class="brand" href="#top" aria-label="MORgain home">
+      <img id="brandLogo" src="assets/morgain-logo.jpg" alt="MORgain crest">
+      <span class="brand-title">MORgain</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+    <nav class="links" id="navLinks">
+      <a href="#breed">The Breed</a>
+      <a href="#feisty">Feisty By Nature</a>
+      <a href="#community">Community</a>
+      <a href="#join" class="nav-cta">Join The Herd</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap">
+      <img id="crestImg" class="crest" src="assets/morgain-logo.jpg" alt="MORgain crest">
+      <h1>The breed<br>that <span class="gold">chooses</span> you.</h1>
+      <p class="lede">America's original horse — fiercely spirited, endlessly versatile, and impossible to forget once it finds you. Meet the Morgan.</p>
+      <div class="btn-row">
+        <a href="#community" class="btn btn-solid">Join the Community</a>
+        <a href="#breed" class="btn btn-line">Meet the Breed</a>
+      </div>
+      <div class="scroll-cue">
+        <span>Scroll</span>
+        <svg width="16" height="24" viewBox="0 0 16 24" fill="none"><path d="M8 1v20M2 15l6 6 6-6" stroke="#f6c445" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="statement" id="breed">
+    <div class="wrap">
+      <div class="node"></div>
+      <p class="eyebrow" style="justify-content:center;">America's First Breed</p>
+      <h2>You don't pick a Morgan. <span class="gold">A Morgan picks you</span> — and once it does, every other horse feels like a compromise.</h2>
+    </div>
+  </section>
+
+  <section class="section" id="feisty">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow" style="justify-content:center;">Feisty By Nature</p>
+        <h2>Small horse. Enormous personality.</h2>
+        <p class="lede">Every trait that made the Morgan a legend two centuries ago still shows up in the cross-ties today.</p>
+      </div>
+    </div>
+    <div class="trait-grid">
+      <div class="trait-card">
+        <span class="trait-num">01</span>
+        <h3>Spirited</h3>
+        <p>A fire that shows up the second the girth tightens — proud, alert, and never bored of the work.</p>
+      </div>
+      <div class="trait-card">
+        <span class="trait-num">02</span>
+        <h3>Versatile</h3>
+        <p>Dressage arena in the morning, trail by afternoon, driving lines by evening. One horse, every discipline.</p>
+      </div>
+      <div class="trait-card">
+        <span class="trait-num">03</span>
+        <h3>Loyal</h3>
+        <p>Bonds hard with the person who shows up for them — the kind of partnership riders spend a lifetime chasing.</p>
+      </div>
+      <div class="trait-card">
+        <span class="trait-num">04</span>
+        <h3>Built to Last</h3>
+        <p>Compact, powerful, and famously sound — a breed built for decades in the saddle, not just seasons.</p>
+      </div>
+      <div class="trait-card">
+        <span class="trait-num">05</span>
+        <h3>Sharp Minded</h3>
+        <p>Quick to learn, quicker to remember — a horse that meets you halfway on every new skill.</p>
+      </div>
+      <div class="trait-card">
+        <span class="trait-num">06</span>
+        <h3>Unmistakable</h3>
+        <p>The arched neck, the animated gait, the presence that turns heads at the in-gate every single time.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="community" id="community">
+    <div class="section">
+      <div class="wrap">
+        <div class="community-grid">
+          <div class="community-copy">
+            <p class="eyebrow">A Breed Built On Community</p>
+            <h2 style="margin-bottom:22px;">The herd grows one introduction at a time.</h2>
+            <p>No one falls in love with the Morgan from a spec sheet. They fall in love at a barn open house, in a Facebook group at midnight, on a friend's Instagram story from the show ring. The breed spreads through people showing other people what it feels like.</p>
+            <p>That's why the network matters as much as the pedigree — clubs, regional associations, virtual clinics, and social feeds all doing the same job: putting a newcomer next to a Morgan long enough for the horse to do the rest.</p>
+            <div class="tag-row">
+              <span class="tag-pill">#MorganMoment</span>
+              <span class="tag-pill">#TheBreedThatChoosesYou</span>
+              <span class="tag-pill">#FeistyByNature</span>
+              <span class="tag-pill">#OneHerd</span>
+            </div>
+          </div>
+          <div class="feed">
+            <div class="post">
+              <div class="post-head">
+                <div class="avatar">JT</div>
+                <div>
+                  <div class="who">Jess T.</div>
+                  <div class="where">First barn visit &middot; 2h ago</div>
+                </div>
+              </div>
+              <p>Went to "just look" at a gelding a friend tagged me in. Left with a lesson booked for Saturday. Send help. #MorganMoment</p>
+              <div class="post-stats"><span>&#9825; 214</span><span>&#128172; 38</span><span>&#8635; 19</span></div>
+            </div>
+            <div class="post">
+              <div class="post-head">
+                <div class="avatar">RB</div>
+                <div>
+                  <div class="who">Regional Morgan Club</div>
+                  <div class="where">Open barn event &middot; Sat 10am</div>
+                </div>
+              </div>
+              <p>New to the breed? Come meet six Morgans doing six different jobs — driving, dressage, trail, and more. No experience needed.</p>
+              <div class="post-stats"><span>&#9825; 96</span><span>&#128172; 22</span><span>&#8635; 41</span></div>
+            </div>
+            <div class="post">
+              <div class="post-head">
+                <div class="avatar">CM</div>
+                <div>
+                  <div class="who">Casey M.</div>
+                  <div class="where">Syndicate share &middot; 1d ago</div>
+                </div>
+              </div>
+              <p>Never thought ownership was in reach until I found a syndicate share online. Now I've got a stallion I check in on every single day. #OneHerd</p>
+              <div class="post-stats"><span>&#9825; 341</span><span>&#128172; 57</span><span>&#8635; 63</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="quotes">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow" style="justify-content:center;">In Their Words</p>
+        <h2>It finds you when you least expect it.</h2>
+      </div>
+      <div class="quote-grid">
+        <div class="quote-card">
+          <p>"I went to a clinic to watch. I left with a waitlist number for a foal."</p>
+          <div class="who">Amateur Owner, Ohio</div>
+        </div>
+        <div class="quote-card">
+          <p>"Thirty years with other breeds, and none of them looked at me the way my Morgan does."</p>
+          <div class="who">Trainer, Vermont</div>
+        </div>
+        <div class="quote-card">
+          <p>"I found the breed on Instagram. I found my horse eight months later. Best scroll of my life."</p>
+          <div class="who">First-Time Owner, Texas</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="join" id="join">
+    <div class="wrap">
+      <div class="node"></div>
+      <p class="eyebrow" style="justify-content:center;">Join The Herd</p>
+      <h2>Ready to let a Morgan choose you?</h2>
+      <p class="lede" style="margin-left:auto; margin-right:auto;">Join the community — first look at open barns, syndicate shares, and the stories that keep spreading the breed.</p>
+      <form class="signup" onsubmit="event.preventDefault(); this.querySelector('button').textContent='You\'re In!';">
+        <input type="email" placeholder="you@example.com" required aria-label="Email address">
+        <button type="submit">Join Free</button>
+      </form>
+      <p class="fine">No spam. Just Morgans.</p>
+      <div class="socials">
+        <a href="#" aria-label="Instagram" title="Instagram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+        </a>
+        <a href="#" aria-label="Facebook" title="Facebook">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 9h3V5h-3a4 4 0 0 0-4 4v2H8v4h2v6h4v-6h3l1-4h-4V9a1 1 0 0 1 1-1z"/></svg>
+        </a>
+        <a href="#" aria-label="YouTube" title="YouTube">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M10 9.5l6 2.5-6 2.5v-5z" fill="currentColor" stroke="none"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-row">
+      <a class="brand" href="#top">
+        <img id="footerLogo" src="assets/morgain-logo.jpg" alt="MORgain crest">
+        <span class="brand-title">MORgain</span>
+      </a>
+      <p class="fine">&copy; <span id="year"></span> The breed that chooses you. Built for Morgan people, everywhere.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // mobile nav toggle
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => {
+    const open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+  });
+
+  // logo + favicon loader: tries your uploaded files first
+  (function loadAssets(){
+    const logoCandidates = [
+      'assets/morgain-logo.jpg',
+      'assets/morgain-logo.png',
+      'assets/logo-mark.jpg'
+    ];
+    const faviconCandidates = [
+      'assets/morgain-favicon.png',
+      'assets/morgain-favicon.ico',
+      'assets/morgain-logo.jpg',
+      'assets/logo-mark.jpg'
+    ];
+    function loadFirst(candidates, onLoad) {
+      let i = 0;
+      function tryNext() {
+        if (i >= candidates.length) { onLoad(null); return; }
+        const url = candidates[i++];
+        const img = new Image();
+        img.onload = () => onLoad(url);
+        img.onerror = tryNext;
+        img.src = url;
+      }
+      tryNext();
+    }
+    loadFirst(logoCandidates, (logoUrl) => {
+      if (logoUrl) {
+        ['brandLogo','crestImg','footerLogo'].forEach(id => {
+          const el = document.getElementById(id);
+          if (el) el.src = logoUrl;
+        });
+      }
+    });
+    loadFirst(faviconCandidates, (fav) => {
+      const link = document.getElementById('faviconLink');
+      if (fav && link) link.href = fav;
+    });
+  })();
+</script>
+
+</body>
+</html>
