@@ -4,8 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MORgain — The Breed That Chooses You</title>
-<meta name="description" content="America's first breed. A feisty, versatile spirit. Discover the Morgan Horse and the community bringing new people into the herd.">
-<link id="faviconLink" rel="icon" href="assets/morgain-favicon.png">
+<meta name="description" content="America's first breed. Classic beauty reimagined — discover the Morgan and the community bringing new people into the herd.">
+<!-- favicons -->
+<link id="faviconLinkSvg" rel="icon" type="image/svg+xml" href="assets/morgain-favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/morgain-favicon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+<meta name="theme-color" content="#0b0313">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,900&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -121,31 +126,18 @@ nav.links a:hover{ color:var(--gold-hi); border-color:var(--gold); }
   min-height:92vh; display:flex; align-items:center; position:relative;
   padding:150px 0 100px; overflow:hidden;
 }
-.hero::after{
-  content:""; position:absolute; inset:0;
-  background:url('assets/banner-wide.jpg') center 30%/cover no-repeat;
-  opacity:.22; mix-blend-mode:luminosity;
-  mask-image:linear-gradient(to bottom, transparent, black 30%, black 70%, transparent);
-}
 .hero .wrap{ text-align:center; display:flex; flex-direction:column; align-items:center; }
 .hero img.crest{ width:120px; margin-bottom:34px; filter:drop-shadow(0 10px 40px rgba(246,196,69,0.35)); }
 .hero h1{ margin-bottom:26px; }
 .hero h1 .gold{ color:var(--gold); }
 .hero .lede{ margin:0 auto 44px; }
 .btn-row{ display:flex; gap:18px; justify-content:center; flex-wrap:wrap; }
-.btn{
-  font-family:var(--mono); font-size:13px; letter-spacing:.14em; text-transform:uppercase;
-  text-decoration:none; padding:17px 30px; border-radius:100px; display:inline-block;
-  border:2px solid var(--gold); transition:all .2s ease; font-weight:700;
-}
+.btn{ font-family:var(--mono); font-size:13px; letter-spacing:.14em; text-transform:uppercase; text-decoration:none; padding:17px 30px; border-radius:100px; display:inline-block; border:2px solid var(--gold); transition:all .2s ease; font-weight:700; }
 .btn-solid{ background:var(--gold); color:var(--void); }
 .btn-solid:hover{ background:var(--gold-hi); border-color:var(--gold-hi); transform:translateY(-2px); }
 .btn-line{ background:transparent; color:var(--gold-hi); }
 .btn-line:hover{ background:rgba(246,196,69,0.1); transform:translateY(-2px); }
-.scroll-cue{
-  margin-top:70px; font-family:var(--mono); font-size:11px; letter-spacing:.2em; text-transform:uppercase;
-  color:var(--dim); display:flex; flex-direction:column; align-items:center; gap:10px;
-}
+.scroll-cue{ margin-top:70px; font-family:var(--mono); font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:var(--dim); display:flex; flex-direction:column; align-items:center; gap:10px; }
 .scroll-cue svg{ animation:bob 1.8s ease-in-out infinite; }
 @keyframes bob{ 0%,100%{ transform:translateY(0);} 50%{ transform:translateY(8px);} }
 
@@ -172,21 +164,11 @@ nav.links a:hover{ color:var(--gold-hi); border-color:var(--gold); }
 .community-grid{ display:grid; grid-template-columns:1fr 1fr; gap:70px; align-items:center; }
 .community-copy p{ color:var(--dim); }
 .tag-row{ display:flex; flex-wrap:wrap; gap:10px; margin-top:28px; }
-.tag-pill{
-  font-family:var(--mono); font-size:12px; color:var(--gold-hi); border:1px solid rgba(246,196,69,0.4);
-  padding:8px 16px; border-radius:100px; letter-spacing:.03em;
-}
+.tag-pill{ font-family:var(--mono); font-size:12px; color:var(--gold-hi); border:1px solid rgba(246,196,69,0.4); padding:8px 16px; border-radius:100px; letter-spacing:.03em; }
 
 .feed{ display:flex; flex-direction:column; gap:16px; }
-.post{
-  background:var(--void); border:1px solid rgba(246,196,69,0.18); border-radius:16px; padding:22px;
-  position:relative;
-}
-.post::before{
-  content:""; position:absolute; left:-27px; top:50%; width:26px; height:2px;
-  background:repeating-linear-gradient(to right, var(--gold) 0 5px, transparent 5px 10px);
-  opacity:.5;
-}
+.post{ background:var(--void); border:1px solid rgba(246,196,69,0.18); border-radius:16px; padding:22px; position:relative; }
+.post::before{ content:""; position:absolute; left:-27px; top:50%; width:26px; height:2px; background:repeating-linear-gradient(to right, var(--gold) 0 5px, transparent 5px 10px); opacity:.5; }
 .post-head{ display:flex; align-items:center; gap:12px; margin-bottom:14px; }
 .avatar{ width:38px; height:38px; border-radius:50%; background:var(--purple); border:1px solid var(--gold); display:flex; align-items:center; justify-content:center; font-family:var(--mono); font-size:12px; color:var(--gold-hi); font-weight:700; flex-shrink:0; }
 .post-head .who{ font-family:var(--body); font-weight:700; font-size:14.5px; color:var(--white); }
@@ -203,23 +185,14 @@ nav.links a:hover{ color:var(--gold-hi); border-color:var(--gold); }
 @media (max-width:860px){ .quote-grid{ grid-template-columns:1fr; } }
 
 .join{ padding:130px 0; text-align:center; position:relative; }
-.join::before{
-  content:""; position:absolute; inset:0;
-  background:radial-gradient(ellipse 900px 400px at 50% 20%, rgba(246,196,69,0.16), transparent 70%);
-}
+.join::before{ content:""; position:absolute; inset:0; background:radial-gradient(ellipse 900px 400px at 50% 20%, rgba(246,196,69,0.16), transparent 70%); }
 .join .wrap{ position:relative; max-width:700px; }
 .join h2{ margin-bottom:22px; }
 .join .lede{ margin:0 auto 40px; }
 .signup{ display:flex; gap:12px; max-width:460px; margin:0 auto 26px; flex-wrap:wrap; justify-content:center; }
-.signup input{
-  flex:1; min-width:220px; background:var(--deep); border:1px solid rgba(246,196,69,0.35); color:var(--white);
-  font-family:var(--body); font-size:15px; padding:15px 18px; border-radius:100px;
-}
+.signup input{ flex:1; min-width:220px; background:var(--deep); border:1px solid rgba(246,196,69,0.35); color:var(--white); font-family:var(--body); font-size:15px; padding:15px 18px; border-radius:100px; }
 .signup input:focus{ outline:none; border-color:var(--gold); }
-.signup button{
-  font-family:var(--mono); font-size:13px; letter-spacing:.1em; text-transform:uppercase; font-weight:700;
-  background:var(--gold); color:var(--void); border:none; padding:15px 28px; border-radius:100px; cursor:pointer;
-}
+.signup button{ font-family:var(--mono); font-size:13px; letter-spacing:.1em; text-transform:uppercase; font-weight:700; background:var(--gold); color:var(--void); border:none; padding:15px 28px; border-radius:100px; cursor:pointer; }
 .signup button:hover{ background:var(--gold-hi); }
 .fine{ font-family:var(--mono); font-size:11.5px; color:var(--dim); }
 .socials{ display:flex; gap:16px; justify-content:center; margin-top:34px; }
@@ -239,7 +212,7 @@ footer .fine{ text-align:right; }
 <header class="site">
   <div class="nav">
     <a class="brand" href="#top" aria-label="MORgain home">
-      <img id="brandLogo" src="assets/morgain-logo.jpg" alt="MORgain crest">
+      <img id="brandLogo" src="assets/morgain-logo.jpg" srcset="assets/morgain-logo.jpg 1x" alt="MORgain crest" width="38" height="38">
       <span class="brand-title">MORgain</span>
     </a>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
@@ -256,7 +229,13 @@ footer .fine{ text-align:right; }
 
   <section class="hero">
     <div class="wrap">
-      <img id="crestImg" class="crest" src="assets/morgain-logo.jpg" alt="MORgain crest">
+      <!-- LCP-friendly hero image (responsive) -->
+      <picture aria-hidden="true">
+        <source type="image/jpeg" srcset="assets/banner-wide.jpg" sizes="100vw">
+        <img id="heroBanner" src="assets/banner-wide.jpg" alt="" width="2400" height="800" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:.22; mix-blend-mode:luminosity; pointer-events:none;">
+      </picture>
+
+      <img id="crestImg" class="crest" src="assets/morgain-logo.jpg" alt="MORgain crest" width="120" height="120">
       <h1>The breed<br>that <span class="gold">chooses</span> you.</h1>
       <p class="lede">America's original horse — fiercely spirited, endlessly versatile, and impossible to forget once it finds you. Meet the Morgan.</p>
       <div class="btn-row">
@@ -282,7 +261,7 @@ footer .fine{ text-align:right; }
     <div class="wrap">
       <div class="section-head">
         <p class="eyebrow" style="justify-content:center;">Proud By Nature</p>
-        <h2>Small horse. Enormous personality.</h2>
+        <h2>Classic Beauty Reimagined.</h2>
         <p class="lede">Every trait that made the Morgan a legend two centuries ago still shows up in the cross-ties today.</p>
       </div>
     </div>
@@ -332,7 +311,7 @@ footer .fine{ text-align:right; }
             <div class="tag-row">
               <span class="tag-pill">#MorganMoment</span>
               <span class="tag-pill">#TheBreedThatChoosesYou</span>
-              <span class="tag-pill">#FeistyByNature</span>
+              <span class="tag-pill">#MorganHorse</span>
               <span class="tag-pill">#OneHerd</span>
             </div>
           </div>
@@ -430,7 +409,7 @@ footer .fine{ text-align:right; }
   <div class="wrap">
     <div class="foot-row">
       <a class="brand" href="#top">
-        <img id="footerLogo" src="assets/morgain-logo.jpg" alt="MORgain crest">
+        <img id="footerLogo" src="assets/morgain-logo.jpg" srcset="assets/morgain-logo.jpg 1x" alt="MORgain crest" width="38" height="38">
         <span class="brand-title">MORgain</span>
       </a>
       <p class="fine">&copy; <span id="year"></span> The breed that chooses you. Built for Morgan people, everywhere.</p>
@@ -453,11 +432,13 @@ footer .fine{ text-align:right; }
   // logo + favicon loader: tries your uploaded files first
   (function loadAssets(){
     const logoCandidates = [
-      'assets/morgain-logo.jpg',
+      'assets/morgain-logo.webp',
       'assets/morgain-logo.png',
+      'assets/morgain-logo.jpg',
       'assets/logo-mark.jpg'
     ];
     const faviconCandidates = [
+      'assets/morgain-favicon.svg',
       'assets/morgain-favicon.png',
       'assets/morgain-favicon.ico',
       'assets/morgain-logo.jpg',
@@ -484,8 +465,16 @@ footer .fine{ text-align:right; }
       }
     });
     loadFirst(faviconCandidates, (fav) => {
-      const link = document.getElementById('faviconLink');
-      if (fav && link) link.href = fav;
+      const linkSvg = document.getElementById('faviconLinkSvg');
+      if (fav && linkSvg) {
+        // keep svg as primary; set png fallback if available
+        if (fav.endsWith('.png') || fav.endsWith('.ico') || fav.endsWith('.jpg')){
+          const pngLink = document.querySelector('link[rel="icon"][type="image/png"]');
+          if (pngLink) pngLink.href = fav;
+        } else if (fav.endsWith('.svg')){
+          linkSvg.href = fav;
+        }
+      }
     });
   })();
 </script>
