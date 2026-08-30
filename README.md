@@ -1,5 +1,6 @@
-# MORGAIN
-## More Gain. MORGAIN. | AI Powered. Horse Focused.
+# MORgain
+
+**More Gain. MORGAIN.** | AI Powered. Horse Focused.
 
 **Elevating Morgan Horses. Maximizing Potential. Delivering More Gain.**
 
@@ -24,46 +25,44 @@ MORGAIN is the premier marketing, AI, and management company for Morgan Stallion
 
 ```
 assets/
-  morgain-logo.png            Morgan logo mark (IMG_2410.png)
-  banner-wide.jpg             Hero banner image (IMG_1918.jpeg)
-  morgain-favicon.png         Favicon for browser (IMG_1918.jpeg)
-  apple-touch-icon.png        iOS touch icon
-  morgain-favicon.svg         SVG favicon fallback
-  morgain-favicon.ico         ICO favicon fallback
-
-index.html                      Main website homepage
-README.md                       This file
-Index                           Project information reference
+  IMG_1917.jpeg     Logo mark — used for favicon, nav logo, hero crest, footer logo
+  IMG_1918.jpeg     Hero banner — fading marketing image at top of hero section
+  IMG_2223.jpeg     Hero background — translucent horse-portrait overlay
+index.html          Main website homepage
+README.md           This file
 ```
+
+**Note:** `IMG_2571.jpeg` was uploaded to the repo but is not currently referenced anywhere in `index.html`. It's available if you want to use it in a future section.
 
 ---
 
-## Brand Assets & Updates
+## Brand Assets & Image Usage
 
-### Image Files Added (2026-08-28)
-- **IMG_1918.png** — Primary logo mark for branding (logo/crest)
-- **IMG_2410.jpeg** — Hero banner image for homepage
-- **IMG_1918.jpeg** — Favicon and brand mark
-- **IMG_2223.jpeg** — Community/lifestyle photography
-- **IMG_2410.jpeg** — Additional brand photography
+| File | Used for |
+|---|---|
+| `IMG_1917.jpeg` | Favicon, apple-touch-icon, nav bar logo, hero crest, footer logo |
+| `IMG_1918.jpeg` | Hero section banner (fades into the background above the crest) |
+| `IMG_2223.jpeg` | Hero section background overlay |
+| `IMG_2571.jpeg` | Not yet used |
 
-All images have been integrated into the `assets/` folder and referenced in the HTML with optimized paths.
+All images live in the `assets/` folder and are referenced with relative paths in `index.html`, so the file must be deployed alongside that folder (e.g. served from the same GitHub repo/Pages root) for images to display. Opening `index.html` outside that structure, or previewing it standalone, will show broken image placeholders — that's expected.
 
 ---
 
 ## Brand Colors & Typography
 
-- **Primary Gold**: #f6c445
-- **Gold Highlight**: #ffe08a
-- **Gold Dim**: #8a6a1f
-- **Dark Background (Void)**: #0b0313
-- **Deep Purple**: #1c0736
-- **Purple Accent**: #4b1690
-- **Violet**: #7c2ee0
-- **White Text**: #fbf3ff
-- **Dim Text**: #c6b6de
+- **Primary Gold**: `#f6c445`
+- **Gold Highlight**: `#ffe08a`
+- **Gold Dim**: `#8a6a1f`
+- **Dark Background (Void)**: `#0b0313`
+- **Deep Purple**: `#1c0736`
+- **Purple Accent**: `#4b1690`
+- **Violet**: `#7c2ee0`
+- **White Text**: `#fbf3ff`
+- **Dim Text**: `#c6b6de`
 
 **Typography:**
+
 - **Display**: Fraunces (serif) — Headlines and branding
 - **Body**: Space Grotesk (sans-serif) — Main content
 - **Mono**: JetBrains Mono — Code and technical elements
@@ -73,13 +72,14 @@ All images have been integrated into the `assets/` folder and referenced in the 
 ## Website Features
 
 - Responsive design (mobile-first)
-- Smooth scroll behavior
+- Smooth scroll behavior, with a clickable scroll-cue jumping to the first section
 - Interactive navigation with mobile toggle
+- Hero section with a fading banner image and translucent background photo
 - Community feed section with engagement stats
 - Newsletter signup integration
 - Social media links (Instagram, Facebook, YouTube)
-- Dark theme with gradient backgrounds
-- Optimized hero section with banner imagery
+- Dark theme with soft gradient blends between sections (no hard seams)
+- Optimized hero section with layered imagery
 
 ---
 
