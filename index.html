@@ -128,6 +128,8 @@ nav.links a:hover{ color:var(--gold-hi); border-color:var(--gold); }
 }
 .hero .wrap{ text-align:center; display:flex; flex-direction:column; align-items:center; }
 .hero img.crest{ width:120px; margin-bottom:34px; filter:drop-shadow(0 10px 40px rgba(246,196,69,0.35)); }
+.hero-badge{ position:absolute; top:36px; left:32px; width:260px; border-radius:12px; box-shadow:0 12px 40px rgba(0,0,0,0.5); z-index:2; }
+@media (max-width:820px){ .hero-badge{ position:static; width:220px; margin:0 auto 30px; } }
 .hero h1{ margin-bottom:26px; }
 .hero h1 .gold{ color:var(--gold); }
 .hero .lede{ margin:0 auto 44px; }
@@ -235,6 +237,7 @@ footer .fine{ text-align:right; }
         <img id="heroBanner" src="assets/IMG_2223.jpeg" alt="" width="2400" height="800" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:.22; mix-blend-mode:overlay;">
       </picture>
 
+      <img class="hero-badge" src="assets/IMG_1918.jpeg" alt="MORgain — Elevating Morgan Horses">
       <img id="crestImg" class="crest" src="assets/IMG_1917.jpeg" alt="MORgain crest" width="120" height="120">
       <h1>The breed<br>that <span class="gold">chooses</span> you.</h1>
       <p class="lede">America's original horse — fiercely spirited, endlessly versatile, and impossible to forget once it finds you. Meet the Morgan.</p>
