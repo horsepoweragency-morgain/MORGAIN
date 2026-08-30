@@ -24,8 +24,8 @@ MORGAIN is the premier marketing, AI, and management company for Morgan Stallion
 
 ```
 assets/
-  morgain-logo.png            Morgan logo mark (IMG_1511.png)
-  banner-wide.jpg             Hero banner image (IMG_1897.jpeg)
+  morgain-logo.png            Morgan logo mark (IMG_2410.png)
+  banner-wide.jpg             Hero banner image (IMG_1918.jpeg)
   morgain-favicon.png         Favicon for browser (IMG_1918.jpeg)
   apple-touch-icon.png        iOS touch icon
   morgain-favicon.svg         SVG favicon fallback
@@ -41,8 +41,8 @@ Index                           Project information reference
 ## Brand Assets & Updates
 
 ### Image Files Added (2026-08-28)
-- **IMG_1511.png** — Primary logo mark for branding (logo/crest)
-- **IMG_1897.jpeg** — Hero banner image for homepage
+- **IMG_1918.png** — Primary logo mark for branding (logo/crest)
+- **IMG_2410.jpeg** — Hero banner image for homepage
 - **IMG_1918.jpeg** — Favicon and brand mark
 - **IMG_2223.jpeg** — Community/lifestyle photography
 - **IMG_2410.jpeg** — Additional brand photography
